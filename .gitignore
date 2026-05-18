@@ -1,0 +1,15 @@
+venv/
+__pycache__/
+*.pyc
+
+models/
+checkpoints/
+outputs/
+runs/
+
+*.bin
+*.pt
+*.pth
+*.safetensors
+
+.env
