@@ -34,10 +34,17 @@ MODEL_PATH = "outputs/final_csharp_cs_model"
 
 tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH)
 
+quant_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_compute_dtype=torch.float16,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_use_double_quant=True
+)
+
 model = AutoModelForCausalLM.from_pretrained(
     MODEL_PATH,
-    torch_dtype=torch.float16,
-    device_map="auto",
+    quantization_config=quant_config,
+    device_map="auto"
 )
 
 model.eval()
