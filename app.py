@@ -112,49 +112,40 @@
 from flask import Flask, request
 from flask_restx import Api, Resource, fields
 from flask_cors import CORS
+import requests
 
 app = Flask(__name__)
 CORS(app)
 
-api = Api(
-    app,
-    title="C# Deep Tutor API",
-    version="1.0",
-    description="Fine-tuned Llama3.2 기반 C# 자료구조 튜터 API"
-)
+api = Api(app)
 
-chat_ns = api.namespace(
-    "chat",
-    description="C# Deep Tutor Chat API"
-)
+chat_ns = api.namespace("chat")
 
 chat_request = api.model("ChatRequest", {
-    "prompt": fields.String(required=True, description="사용자 질문"),
-    "history": fields.List(fields.Raw, required=False, description="이전 대화 기록")
+    "prompt": fields.String(required=True),
+    "history": fields.List(fields.Raw, required=False)
 })
 
 chat_response = api.model("ChatResponse", {
-    "response": fields.String(description="모델 응답")
+    "response": fields.String()
 })
 
+LOCAL_LLM_URL = "https://abcd-1234.ngrok-free.app/chat"
 
 @chat_ns.route("")
 class Chat(Resource):
-
     @chat_ns.expect(chat_request)
     @chat_ns.marshal_with(chat_response)
     def post(self):
         data = request.get_json()
-        user_prompt = data.get("prompt", "")
 
-        return {
-            "response": f"AWS Flask API 서버 연결 성공. 입력 질문: {user_prompt}"
-        }
+        response = requests.post(
+            LOCAL_LLM_URL,
+            json=data,
+            timeout=120
+        )
 
+        return response.json()
 
 if __name__ == "__main__":
-    app.run(
-        host="0.0.0.0",
-        port=5000,
-        debug=False
-    )
+    app.run(host="0.0.0.0", port=5000, debug=False)
