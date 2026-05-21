@@ -130,7 +130,7 @@ chat_response = api.model("ChatResponse", {
     "response": fields.String()
 })
 
-LOCAL_LLM_URL = "https://cloud-dynamite-mandolin.ngrok-free.dev"
+LOCAL_LLM_URL = "https://cloud-dynamite-mandolin.ngrok-free.dev/chat"
 
 @chat_ns.route("")
 class Chat(Resource):
