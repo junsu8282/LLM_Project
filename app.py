@@ -142,7 +142,7 @@ class Chat(Resource):
         response = requests.post(
             LOCAL_LLM_URL,
             json=data,
-            timeout=120
+            timeout=300
         )
 
         return response.json()
