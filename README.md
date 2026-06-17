@@ -264,6 +264,3 @@ POST /chat
 박준수
 
 AI Engineer / Software Developer
-
-GitHub: https://github.com/your-id
-LinkedIn: https://linkedin.com/in/your-profile
