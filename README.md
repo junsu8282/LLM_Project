@@ -255,7 +255,7 @@ POST /chat
 
 프로젝트 화면
 
-![chatbot](docs/chatbot.png)
+<img width="1912" height="949" alt="Image" src="https://github.com/user-attachments/assets/1f9bfc73-5841-427a-b9eb-4638f808be08" />
 
 ---
 
