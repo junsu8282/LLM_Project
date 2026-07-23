@@ -6,6 +6,12 @@ Llama 3.2 3B Base 모델을 기반으로 Multi-Stage QLoRA Fine-Tuning을 적용
 
 ---
 
+# Project View
+
+<img width="1912" height="949" alt="Image" src="https://github.com/user-attachments/assets/1f9bfc73-5841-427a-b9eb-4638f808be08" />
+
+---
+
 # Project Overview
 
 기존 범용 LLM은 일반적인 질문에는 높은 성능을 보이지만 개발 개념 설명에서는 답변 구조가 일정하지 않거나 설명의 깊이가 부족한 경우가 있었습니다.
@@ -248,14 +254,6 @@ POST /chat
 * RAG 적용
 * LangChain 적용
 * LangGraph 기반 Workflow 설계
-
----
-
-# Demo
-
-프로젝트 화면
-
-<img width="1912" height="949" alt="Image" src="https://github.com/user-attachments/assets/1f9bfc73-5841-427a-b9eb-4638f808be08" />
 
 ---
 
