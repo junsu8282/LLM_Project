@@ -9,8 +9,7 @@ Llama 3.2 3B Base 모델을 기반으로 Multi-Stage QLoRA Fine-Tuning을 적용
 # Project View
 
 <img width="1912" height="949" alt="Image" src="https://github.com/user-attachments/assets/1f9bfc73-5841-427a-b9eb-4638f808be08" />
-
----
+<img width="1901" height="952" alt="Image" src="https://github.com/user-attachments/assets/07f12ba6-cbe5-435d-afcf-1c2f72bb6323" />
 
 # Project Overview
 
